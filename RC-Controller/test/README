@@ -1,0 +1,30 @@
+Controller Unit (Transmitter)
+Overview:
+
+    The controller reads movement inputs from a two‑axis analog joystick and translates them into:
+
+    Steering angle (converted to a 50°–130° servo range)
+
+    Driving direction (Forward, Backward, Stop)
+
+    Processed control data is sent to the vehicle as a formatted ESP-NOW message. The controller also receives telemetry packets from the RC body.
+
+Input & Control Logic:
+
+    Joystick X-axis → steering angle
+
+    Joystick Y-axis → drive direction
+
+    Deadzone filtering reduces noise around the center position
+
+    ESP-NOW sends data every 100 ms
+
+    Telemetry Handling
+
+The controller receives:
+
+    Current steering angle
+
+    Current direction
+
+    Incoming telemetry is printed via the Serial Monitor for debugging.
